@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class ValueUpdateFloatEventComponent : EventComponent<ValueUpdate<float>>
+public class Collider2DEventComponent : EventComponent<Collider2D>
 {
     // TYPEDEFS
 
     [System.Serializable]
-    private class ValueUpdateFloatEvent : UnityEvent<ValueUpdate<float>> { };
+    private class UnityEventSubtype : UnityEvent<Collider2D> { };
 
     // VARIABLES
 
@@ -14,7 +14,7 @@ public class ValueUpdateFloatEventComponent : EventComponent<ValueUpdate<float>>
     [Tooltip("The name of the event")]
     private string _name;
     [SerializeField]
-    private ValueUpdateFloatEvent _event;
+    private UnityEventSubtype _event;
 
     // FUNCTIONS
 
@@ -23,7 +23,7 @@ public class ValueUpdateFloatEventComponent : EventComponent<ValueUpdate<float>>
         return _name;
     }
 
-    public override UnityEvent<ValueUpdate<float>> GetEvent()
+    public override UnityEvent<Collider2D> GetEvent()
     {
         return _event;
     }

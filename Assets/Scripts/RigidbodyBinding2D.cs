@@ -6,15 +6,11 @@ public class RigidbodyBinding2D : MonoBehaviour
     // VARIABLES
     [SerializeField]
     [Tooltip("Center of the box where the rigidbody is bound")]
-    private Vector2 middle;
+    private Vector2 origin;
 
     [SerializeField]
-    [Tooltip("Distance from center to the horizontal sides of the bounding box")]
-    private float horizontalExtent;
-
-    [SerializeField]
-    [Tooltip("Distance from the center to the vertical sides of the bounding box")]
-    private float verticalExtent;
+    [Tooltip("Distance from center to the horizontal / vertical sides of the bounding box")]
+    private Vector2 extents;
 
     private Rigidbody2D _target;
 
@@ -34,8 +30,8 @@ public class RigidbodyBinding2D : MonoBehaviour
     private void Update()
     {
         target.position = new Vector2 (
-            Mathf.Clamp(target.position.x, middle.x - horizontalExtent, middle.x + horizontalExtent), 
-            Mathf.Clamp(target.position.y, middle.y - verticalExtent, middle.y + verticalExtent)
+            Mathf.Clamp(target.position.x, origin.x - extents.x, origin.x + extents.x), 
+            Mathf.Clamp(target.position.y, origin.y - extents.y, origin.y + extents.y)
         );
     }
 }

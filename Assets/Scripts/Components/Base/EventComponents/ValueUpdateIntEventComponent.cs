@@ -7,7 +7,7 @@ public class ValueUpdateIntEventComponent : EventComponent<ValueUpdate<int>>
     // TYPEDEFS
 
     [System.Serializable]
-    private class ValueUpdateIntEvent : UnityEvent<ValueUpdate<int>> { };
+    private class UnityEventSubtype : UnityEvent<ValueUpdate<int>> { };
 
     // VARIABLES
 
@@ -15,7 +15,7 @@ public class ValueUpdateIntEventComponent : EventComponent<ValueUpdate<int>>
     [Tooltip("The name of the event")]
     private string _name;
     [SerializeField]
-    private ValueUpdateIntEvent _event;
+    private UnityEventSubtype _event;
 
     // FUNCTIONS
 
