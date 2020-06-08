@@ -1,24 +1,32 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class TriggerEvents2D : MonoBehaviour
 {
     [SerializeField]
-    private Collider2DEventComponent onTrigger2DEnter;
+    [Tooltip("Reference to the GameObject that will store the GameObject that triggered the event")]
+    private GameObjectVariable otherInCollision;
+
     [SerializeField]
-    private Collider2DEventComponent onTrigger2DStay;
+    private UnityEvent onTrigger2DEnter;
     [SerializeField]
-    private Collider2DEventComponent onTrigger2DExit;
+    private UnityEvent onTrigger2DStay;
+    [SerializeField]
+    private UnityEvent onTrigger2DExit;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        onTrigger2DEnter.Invoke(collision);
+        otherInCollision.SetValue(collision.gameObject);
+        onTrigger2DEnter.Invoke();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        onTrigger2DStay.Invoke(collision);
+        otherInCollision.SetValue(collision.gameObject);
+        onTrigger2DStay.Invoke();
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        onTrigger2DExit.Invoke(collision);
+        otherInCollision.SetValue(collision.gameObject);
+        onTrigger2DExit.Invoke();
     }
 }

@@ -2,8 +2,8 @@
 using System.Collections;
 
 [System.Serializable]
-public abstract class VariableReference<Type>
+public abstract class Reference<Type>
 {
     public abstract Type GetValue();
-    public abstract VariableComponent<Type> GetComponent();
+    public abstract Variable<Type> GetReference();
 }

@@ -216,6 +216,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boundary
       objectReference: {fileID: 0}
+    - target: {fileID: 1959880661374943076, guid: 6aa730932b9753247b9d1c46d9738e2f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1959880661374943078, guid: 6aa730932b9753247b9d1c46d9738e2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -340,13 +345,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8409482426519287120, guid: 2935b5195f9d136488964b3462b5f6a6,
-        type: 3}
-      propertyPath: _event.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 331878456070137515, guid: 2935b5195f9d136488964b3462b5f6a6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2935b5195f9d136488964b3462b5f6a6, type: 3}
 --- !u!1001 &6940336336230795434
 PrefabInstance:

@@ -8,7 +8,7 @@ public class ChangeOnCollider2DEvent : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Integer to change when the collider event is raised")]
-    private IntComponent intComponent;
+    private IntVariable intComponent;
 
     [SerializeField]
     [Tooltip("Amount to change the int component by when the event is raised with a matching collider")]

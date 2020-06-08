@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Collections;
 
-public static class EditorGUIExtension
+public static class EditorGUIExt
 {
     // Get the rect of a single control, given the rect of the parent control
     // and the index of the control inside the parent control

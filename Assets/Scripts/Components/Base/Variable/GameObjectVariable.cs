@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
-public class IntComponent : VariableComponent<int>
+public class GameObjectVariable : Variable<GameObject>
 {
     // VARIABLES
     [SerializeField]
@@ -10,11 +11,11 @@ public class IntComponent : VariableComponent<int>
 
     [SerializeField]
     [Tooltip("The default value of the variable component")]
-    private int defaultValue;
+    private GameObject defaultValue;
 
     [SerializeField]
     [Tooltip("Event invoked when the value of the component changes")]
-    private ValueUpdateIntEventComponent onValueChanged;
+    private UnityEvent onValueChanged;
 
     // FUNCITONS
 
@@ -23,11 +24,11 @@ public class IntComponent : VariableComponent<int>
     {
         return variableName;
     }
-    public override int GetDefaultValue()
+    public override GameObject GetDefaultValue()
     {
         return defaultValue;
     }
-    public override EventComponent<ValueUpdate<int>> GetValueChangedEvent()
+    public override UnityEvent GetValueChangedEvent()
     {
         return onValueChanged;
     }

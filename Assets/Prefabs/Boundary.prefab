@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 1959880661374943078}
   - component: {fileID: 1959880661374943077}
   - component: {fileID: 2000025710334368743}
-  - component: {fileID: 7877061890994932916}
+  - component: {fileID: 1015729504458627971}
+  - component: {fileID: 4104037041415213531}
+  - component: {fileID: 7931918613599559336}
   m_Layer: 0
   m_Name: Boundary
   m_TagString: Untagged
@@ -29,8 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1699015109916367810}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72,10 +73,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0921432123072b1449ad5a0fc35548f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTrigger2DEnter: {fileID: 1267135388134919785}
-  onTrigger2DStay: {fileID: 1101828069364769355}
-  onTrigger2DExit: {fileID: 5026474605916545557}
---- !u!114 &7877061890994932916
+  otherInCollision: {fileID: 7931918613599559336}
+  onTrigger2DEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onTrigger2DStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onTrigger2DExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1015729504458627971}
+        m_MethodName: Compare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1015729504458627971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,184 +103,72 @@ MonoBehaviour:
   m_GameObject: {fileID: 1959880661374943076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381674826acb23443a26ebdd813120bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3450f16bebe98cf4dad48f8124b6f85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventComponent: {fileID: 5026474605916545557}
-  check: 0
-  tags:
-  - Bullet
---- !u!1 &2757995198230725607
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4800272379698567473}
-  - component: {fileID: 1267135388134919785}
-  m_Layer: 0
-  m_Name: OnTriggerEnter2DComponent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4800272379698567473
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2757995198230725607}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1699015109916367810}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1267135388134919785
+  gameObjectReference:
+    type: 1
+    component: {fileID: 7931918613599559336}
+    value: {fileID: 0}
+  criteria:
+    check: 0
+    tags:
+    - Bullet
+  events:
+    _true:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4104037041415213531}
+          m_MethodName: Destroy
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    _false:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &4104037041415213531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2757995198230725607}
+  m_GameObject: {fileID: 1959880661374943076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304bb0b4c4838d445a9783c8f9d915fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 62c8cd30152ad4e40960189682e8f85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: onTriggerEnter2D
-  _event:
+  objectReference:
+    type: 1
+    component: {fileID: 7931918613599559336}
+    value: {fileID: 0}
+  time:
+    type: 0
+    component: {fileID: 0}
+    value: 0
+  output:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &4329976623241519516
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6804661319896511242}
-  - component: {fileID: 1101828069364769355}
-  m_Layer: 0
-  m_Name: OnTriggerStay2DComponent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6804661319896511242
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4329976623241519516}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1699015109916367810}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1101828069364769355
+--- !u!114 &7931918613599559336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4329976623241519516}
+  m_GameObject: {fileID: 1959880661374943076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304bb0b4c4838d445a9783c8f9d915fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 298de48564e25f946bd8d002bdf0eaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: onTriggerStay2D
-  _event:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!1 &4988727050275303664
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1699015109916367810}
-  m_Layer: 0
-  m_Name: TriggerEventComponents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1699015109916367810
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4988727050275303664}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4800272379698567473}
-  - {fileID: 6804661319896511242}
-  - {fileID: 6239328200887478700}
-  m_Father: {fileID: 1959880661374943078}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6170862109188889353
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6239328200887478700}
-  - component: {fileID: 5026474605916545557}
-  m_Layer: 0
-  m_Name: OnTriggerExit2DComponent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6239328200887478700
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6170862109188889353}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1699015109916367810}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5026474605916545557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6170862109188889353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304bb0b4c4838d445a9783c8f9d915fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: onTriggerExit2D
-  _event:
+  variableName: other
+  defaultValue: {fileID: 0}
+  onValueChanged:
     m_PersistentCalls:
       m_Calls: []

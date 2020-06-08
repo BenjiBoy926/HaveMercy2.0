@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class VariableComponent<Type> : MonoBehaviour
+public abstract class Variable<Type> : MonoBehaviour
 {
     // VARIABLES
     protected Type value;
@@ -17,13 +17,13 @@ public abstract class VariableComponent<Type> : MonoBehaviour
     }
     public void SetValue(Type newValue)
     {
-        GetValueChangedEvent().Invoke(new ValueUpdate<Type>(value, newValue));
         value = newValue;
+        GetValueChangedEvent().Invoke();
     }
 
     // Get the name.  Get the default value.  Get the value changed event
     // Abstract because each subclass needs to expose these in Unity's editor
     public abstract string GetName();
     public abstract Type GetDefaultValue();
-    public abstract EventComponent<ValueUpdate<Type>> GetValueChangedEvent();
+    public abstract UnityEvent GetValueChangedEvent();
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class FloatComponent : VariableComponent<float>
+public class FloatVariable : Variable<float>
 {
     // VARIABLES
     [SerializeField]
@@ -14,7 +14,7 @@ public class FloatComponent : VariableComponent<float>
 
     [SerializeField]
     [Tooltip("Event invoked when the value of the component changes")]
-    private ValueUpdateFloatEventComponent onValueChanged;
+    private UnityEvent onValueChanged;
 
     // FUNCITONS
 
@@ -27,7 +27,7 @@ public class FloatComponent : VariableComponent<float>
     {
         return defaultValue;
     }
-    public override EventComponent<ValueUpdate<float>> GetValueChangedEvent()
+    public override UnityEvent GetValueChangedEvent()
     {
         return onValueChanged;
     }
