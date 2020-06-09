@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class ObjectReference : Reference<Object>
+public class Vector2Reference : Reference<Vector2>
 {
     [SerializeField]
     [Tooltip("Type of reference")]
@@ -9,13 +9,13 @@ public class ObjectReference : Reference<Object>
 
     [SerializeField]
     [Tooltip("Component used to get the int, in the case of a variable reference type")]
-    private ObjectVariable component = null;
+    private Vector2Variable component = null;
 
     [SerializeField]
     [Tooltip("Value in the reference")]
-    private GameObject value;
+    private Vector2 value;
 
-    public override Object GetValue()
+    public override Vector2 GetValue()
     {
         switch (type)
         {
@@ -25,7 +25,7 @@ public class ObjectReference : Reference<Object>
         }
     }
 
-    public override Variable<Object> GetReference()
+    public override Variable<Vector2> GetReference()
     {
         return component;
     }

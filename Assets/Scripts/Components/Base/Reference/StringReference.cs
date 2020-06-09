@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 [System.Serializable]
-public class FloatReference : Reference<float>
+public class StringReference : Reference<string>
 {
     [SerializeField]
     [Tooltip("Type of reference")]
@@ -10,13 +9,13 @@ public class FloatReference : Reference<float>
 
     [SerializeField]
     [Tooltip("Component used to get the int, in the case of a variable reference type")]
-    private FloatVariable component = null;
+    private StringVariable component = null;
 
     [SerializeField]
     [Tooltip("Value in the reference")]
-    private float value;
+    private string value;
 
-    public override float GetValue()
+    public override string GetValue()
     {
         switch (type)
         {
@@ -26,7 +25,7 @@ public class FloatReference : Reference<float>
         }
     }
 
-    public override Variable<float> GetReference()
+    public override Variable<string> GetReference()
     {
         return component;
     }

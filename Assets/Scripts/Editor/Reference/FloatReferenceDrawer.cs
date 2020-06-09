@@ -4,15 +4,18 @@ using UnityEditor;
 [CustomPropertyDrawer(typeof(FloatReference))]
 public class FloatReferenceDrawer : PropertyDrawer
 {
-    private bool foldout = false;   // True if the drawer is unfurled
-
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        EditorReferenceDrawer.OnGUI(position, property, label, ref foldout);
+        EditorReferenceDrawer.OnGUI(position, property, label, ValueDrawer);
     }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        return EditorReferenceDrawer.GetPropertyHeight(property, label, foldout);
+        return EditorReferenceDrawer.GetPropertyHeight(property, label);
+    }
+
+    private void ValueDrawer(Rect position, SerializedProperty value)
+    {
+        value.floatValue = EditorGUI.FloatField(position, value.floatValue);
     }
 }

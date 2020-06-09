@@ -54,7 +54,7 @@ public class PlayerEmitter : MonoBehaviour
 
     private void Emit(PlayerEmitterInfo info)
     {
-        emitter.Emit(info.prefab, transform.position, Vector2.right, info.travelSpeed);
+        //emitter.Do(info.prefab, transform.position, Vector2.right, info.travelSpeed);
         timeSinceLastShot = Time.time;
     }
 }

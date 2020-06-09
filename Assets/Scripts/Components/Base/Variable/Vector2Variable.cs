@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class FloatVariable : Variable<float>
+public class Vector2Variable : Variable<Vector2>
 {
     // VARIABLES
     [SerializeField]
@@ -10,7 +10,7 @@ public class FloatVariable : Variable<float>
 
     [SerializeField]
     [Tooltip("The default value of the variable component")]
-    private float defaultValue;
+    private Vector2 defaultValue;
 
     [SerializeField]
     [Tooltip("Event invoked when the value of the component changes")]
@@ -23,7 +23,7 @@ public class FloatVariable : Variable<float>
     {
         return variableName;
     }
-    public override float GetDefaultValue()
+    public override Vector2 GetDefaultValue()
     {
         return defaultValue;
     }

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer(typeof(GameObjectReference))]
-public class GameObjectReferenceDrawer : PropertyDrawer
+[CustomPropertyDrawer(typeof(Vector2Reference))]
+public class Vector2ReferenceDrawer : PropertyDrawer
 {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
@@ -16,6 +16,6 @@ public class GameObjectReferenceDrawer : PropertyDrawer
 
     private void ValueDrawer(Rect position, SerializedProperty value)
     {
-        EditorGUI.ObjectField(position, value, GUIContent.none);
+        value.vector2Value = EditorGUI.Vector2Field(position, GUIContent.none, value.vector2Value);
     }
 }

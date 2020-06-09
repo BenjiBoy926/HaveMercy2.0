@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 
-public class ObjectVariable : Variable<Object>
+public class StringVariable : Variable<string>
 {
     // VARIABLES
     [SerializeField]
@@ -11,7 +10,7 @@ public class ObjectVariable : Variable<Object>
 
     [SerializeField]
     [Tooltip("The default value of the variable component")]
-    private Object defaultValue;
+    private string defaultValue;
 
     [SerializeField]
     [Tooltip("Event invoked when the value of the component changes")]
@@ -24,7 +23,7 @@ public class ObjectVariable : Variable<Object>
     {
         return variableName;
     }
-    public override Object GetDefaultValue()
+    public override string GetDefaultValue()
     {
         return defaultValue;
     }
