@@ -22,7 +22,7 @@ public class Emitter2D : MonoBehaviour
 
     public void Do()
     {
-        Transform cloneParent = parent.GetValue() == null ? parent.GetValue().transform : null;
+        Transform cloneParent = parent.GetValue() != null ? parent.GetValue().transform : null;
         GameObject instance = Instantiate(prefab.GetValue(), origin.GetValue(), prefab.GetValue().transform.rotation, cloneParent);
         Rigidbody2D cloneRigidbody = instance.GetComponent<Rigidbody2D>();
 
@@ -30,7 +30,7 @@ public class Emitter2D : MonoBehaviour
         {
             cloneRigidbody.velocity = direction.GetValue().normalized * speed.GetValue();
 
-            clone.SetValue(instance);
+            clone?.SetValue(instance);
             output.Invoke();
         }
     }

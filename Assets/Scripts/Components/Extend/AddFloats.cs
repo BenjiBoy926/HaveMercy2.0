@@ -2,23 +2,23 @@
 using UnityEngine.Events;
 using System.Collections;
 
-public class AddInts : MonoBehaviour
+public class AddFloats : MonoBehaviour
 {
     [SerializeField]
-    private IntReference int1;
+    private FloatReference float1;
 
     [SerializeField]
-    private IntReference int2; 
+    private FloatReference float2;
 
     [SerializeField]
-    private IntVariable result;
+    private FloatVariable result;
 
     [SerializeField]
     private UnityEvent output;
 
     public void Add()
     {
-        result?.SetValue(int1.GetValue() + int2.GetValue());
+        result?.SetValue(float1.GetValue() + float2.GetValue());
         output.Invoke();
     }
 }

@@ -13,7 +13,7 @@ public class SetInt : MonoBehaviour
 
     public void Do()
     {
-        result.SetValue(newValue.GetValue());
+        result?.SetValue(newValue.GetValue());
         output.Invoke();
     }
 }

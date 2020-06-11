@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
-using System;
 
 public class EditorReferenceDrawer
 {
-    public static void OnGUI(Rect position, SerializedProperty property, GUIContent label, Action<Rect, SerializedProperty> valueDrawer)
+    public static void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         Rect content = EditorGUI.PrefixLabel(position, label);
 
@@ -13,21 +12,18 @@ public class EditorReferenceDrawer
         Rect typeRect = new Rect(content.x, content.y, typeWidth, content.height);
         Rect valueRect = new Rect(content.x + typeWidth, content.y, content.width - typeWidth, content.height);
 
+        // Set up the editor for the reference type
         SerializedProperty type = property.FindPropertyRelative("type");
-        SerializedProperty reference = property.FindPropertyRelative("component");
-        SerializedProperty value = property.FindPropertyRelative("value");
-        
-        type.enumValueIndex = (int)(ReferenceType)EditorGUI.EnumPopup(typeRect, (ReferenceType)type.enumValueIndex);
+        EditorGUI.PropertyField(typeRect, property.FindPropertyRelative("type"), GUIContent.none);
 
         if(type.enumValueIndex == 0)
         {
-            valueDrawer.Invoke(valueRect, value);
+            EditorGUI.PropertyField(valueRect, property.FindPropertyRelative("value"), GUIContent.none);
         }
         else
         {
-            EditorGUI.ObjectField(valueRect, reference, GUIContent.none);
+            EditorGUI.PropertyField(valueRect, property.FindPropertyRelative("component"), GUIContent.none);
         }
-
 
         //foldout = EditorGUI.BeginFoldoutHeaderGroup(EditorGUIExt.ChildPropertyRect(position, 0), foldout, label);
 

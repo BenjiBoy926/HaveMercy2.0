@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
-public abstract class Event<InputType, ResultType> : MonoBehaviour
-    where InputType : Inputs<int>
+public abstract class Event : MonoBehaviour
 {
-    public abstract void Do();
-
-    
+    public abstract void Invoke();
 }

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer(typeof(FloatReference))]
-public class FloatReferenceDrawer : PropertyDrawer
+[CustomPropertyDrawer(typeof(Vector3Reference))]
+public class Vector3ReferenceDrawer : PropertyDrawer
 {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {

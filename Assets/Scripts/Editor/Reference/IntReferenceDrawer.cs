@@ -6,16 +6,11 @@ public class IntReferenceDrawer : PropertyDrawer
 {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        EditorReferenceDrawer.OnGUI(position, property, label, ValueDrawer);
+        EditorReferenceDrawer.OnGUI(position, property, label);
     }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         return EditorReferenceDrawer.GetPropertyHeight(property, label);
-    }
-
-    private void ValueDrawer(Rect position, SerializedProperty value)
-    {
-        value.intValue = EditorGUI.IntField(position, value.intValue);
     }
 }
