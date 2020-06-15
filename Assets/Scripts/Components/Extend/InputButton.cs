@@ -7,25 +7,21 @@ public class InputButton : MonoBehaviour
     private StringReference inputName;
 
     [SerializeField]
-    private UnityEvent down;
-    [SerializeField]
-    private UnityEvent stay;
-    [SerializeField]
-    private UnityEvent up;
+    private ButtonEvents events;
 
     private void Update()
     {
         if(Input.GetButtonDown(inputName.GetValue()))
         {
-            down.Invoke();
+            events.down.Invoke();
         }
         if(Input.GetButton(inputName.GetValue()))
         {
-            stay.Invoke();
+            events.stay.Invoke();
         }
         if(Input.GetButtonUp(inputName.GetValue()))
         {
-            up.Invoke();
+            events.up.Invoke();
         }
     }
 }
