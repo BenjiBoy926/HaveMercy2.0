@@ -59,4 +59,32 @@ public static class EditorGUIExt
         }
         else EditorGUI.PropertyField(position, property);
     }
+
+    public static void BasicSwitchDrawer(Rect position, SerializedProperty property, GUIContent label, 
+        float switchPropertyWidth, string switchPropertyName, string property1Name, string property2Name)
+    {
+        Rect content = EditorGUI.PrefixLabel(position, label);
+
+        // Calculate the content for the reference button toggle and the reference drawer
+        float typeWidth = switchPropertyWidth;
+        Rect typeRect = new Rect(content.x, content.y, typeWidth, content.height);
+        Rect valueRect = new Rect(
+            content.x + typeWidth + EditorGUIUtility.standardVerticalSpacing,
+            content.y,
+            content.width - typeWidth - EditorGUIUtility.standardVerticalSpacing,
+            content.height);
+
+        // Set up the editor for the reference type
+        SerializedProperty switchProperty = property.FindPropertyRelative(switchPropertyName);
+        EditorGUI.PropertyField(typeRect, switchProperty, GUIContent.none);
+
+        if (switchProperty.enumValueIndex == 0)
+        {
+            EditorGUI.PropertyField(valueRect, property.FindPropertyRelative(property1Name), GUIContent.none);
+        }
+        else
+        {
+            EditorGUI.PropertyField(valueRect, property.FindPropertyRelative(property2Name), GUIContent.none);
+        }
+    }
 }

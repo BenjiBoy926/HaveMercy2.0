@@ -32,7 +32,7 @@ public class FloatVariable : Variable<float>
         return onValueChanged;
     }
 
-    private void Start()
+    private void Awake()
     {
         value = defaultValue;
     }

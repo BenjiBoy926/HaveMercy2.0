@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - PlayerBulletAttack
+  - PlayerBulletHeal
+  - EnemyBulletAttack
   - Player:Bullet:Attack
   - Player:Bullet:Heal
   layers:

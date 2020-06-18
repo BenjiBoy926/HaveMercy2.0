@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 752899189324806380, guid: b1f9c94ffea69dd4499735cd655e6366,
         type: 3}
       propertyPath: m_TagString
-      value: Player:Bullet:Heal
+      value: PlayerBulletHeal
       objectReference: {fileID: 0}
     - target: {fileID: 752899189324806381, guid: b1f9c94ffea69dd4499735cd655e6366,
         type: 3}

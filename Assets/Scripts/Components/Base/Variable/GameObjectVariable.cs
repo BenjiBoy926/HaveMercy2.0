@@ -33,7 +33,7 @@ public class GameObjectVariable : Variable<GameObject>
         return onValueChanged;
     }
 
-    private void Start()
+    private void Awake()
     {
         value = defaultValue;
     }

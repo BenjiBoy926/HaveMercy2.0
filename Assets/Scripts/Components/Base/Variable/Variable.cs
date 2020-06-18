@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public abstract class Variable<Type> : MonoBehaviour
@@ -26,4 +24,14 @@ public abstract class Variable<Type> : MonoBehaviour
     public abstract string GetName();
     public abstract Type GetDefaultValue();
     public abstract UnityEvent GetValueChangedEvent();
+
+    public void LogValue()
+    {
+        Debug.Log(ToString());
+    }
+
+    public override string ToString()
+    {
+        return GetName() + "{" + value.ToString() + "}";
+    }
 }

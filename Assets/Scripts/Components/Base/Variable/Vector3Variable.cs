@@ -33,7 +33,7 @@ public class Vector3Variable : Variable<Vector3>
         return onValueChanged;
     }
 
-    private void Start()
+    private void Awake()
     {
         value = defaultValue;
     }

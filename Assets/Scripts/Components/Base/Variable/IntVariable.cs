@@ -32,7 +32,7 @@ public class IntVariable : Variable<int>
         return onValueChanged;
     }
 
-    private void Start()
+    private void Awake()
     {
         value = defaultValue;
     }

@@ -32,7 +32,7 @@ public class BoolVariable : Variable<bool>
         return onValueChanged;
     }
 
-    private void Start()
+    private void Awake()
     {
         value = defaultValue;
     }

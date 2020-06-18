@@ -32,7 +32,7 @@ public class StringVariable : Variable<string>
         return onValueChanged;
     }
 
-    private void Start()
+    private void Awake()
     {
         value = defaultValue;
     }
