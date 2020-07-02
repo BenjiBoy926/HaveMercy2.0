@@ -56,12 +56,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237296884955995759}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6207789285482576477}
-  m_RootOrder: 1
+  m_Father: {fileID: 1639725860335855973}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5494065624644530618
 MonoBehaviour:
@@ -77,6 +77,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variableName: maxCharge
   defaultValue: 10
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &1319119418875025713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1275663471081640453}
+  - component: {fileID: 2604352725001533769}
+  m_Layer: 0
+  m_Name: TimesFullChargeReached
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1275663471081640453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319119418875025713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1639725860335855973}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2604352725001533769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319119418875025713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e4e96df643388c4aa4191edc8c1de69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableName: timesFullChargeReached
+  defaultValue: 0
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -108,8 +156,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6207789285482576477}
-  m_RootOrder: 2
+  m_Father: {fileID: 1639725860335855973}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &62832963079504355
 MonoBehaviour:
@@ -215,8 +263,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4227846983849782962}
-  - {fileID: 5146288681093537924}
-  - {fileID: 1416521671307190006}
+  - {fileID: 1639725860335855973}
   - {fileID: 8736734303933001248}
   - {fileID: 2774239930611753641}
   m_Father: {fileID: 6292320546521555527}
@@ -252,7 +299,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6207789285482576477}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6525013833019705653
 MonoBehaviour:
@@ -529,9 +576,9 @@ MonoBehaviour:
     greaterThanOrEqualTo:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6292320546521555525}
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 2070661784173303585}
+          m_MethodName: Add
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -586,11 +633,11 @@ MonoBehaviour:
   min:
     type: 0
     component: {fileID: 0}
-    value: {x: 2, y: 0}
+    value: {x: 4, y: 0}
   max:
     type: 0
     component: {fileID: 0}
-    value: {x: 2, y: 4}
+    value: {x: 4, y: 4}
   result: {fileID: 3321920254218476238}
   output:
     m_PersistentCalls:
@@ -606,6 +653,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &3615960594855345859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1639725860335855973}
+  m_Layer: 0
+  m_Name: ChargeVariables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1639725860335855973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615960594855345859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5146288681093537924}
+  - {fileID: 1416521671307190006}
+  - {fileID: 1275663471081640453}
+  m_Father: {fileID: 6207789285482576477}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4366838654882801805
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,11 +836,11 @@ MonoBehaviour:
   min:
     type: 0
     component: {fileID: 0}
-    value: {x: 2, y: -4}
+    value: {x: 4, y: -4}
   max:
     type: 0
     component: {fileID: 0}
-    value: {x: 2, y: 0}
+    value: {x: 4, y: 0}
   result: {fileID: 3321920254218476238}
   output:
     m_PersistentCalls:
@@ -879,6 +959,93 @@ MonoBehaviour:
     component: {fileID: 0}
     value: -1
   result: {fileID: 9194760558998563539}
+  output:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &5603451262097555527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5657156722981258408}
+  - component: {fileID: 2070661784173303585}
+  - component: {fileID: 8132838260546739134}
+  m_Layer: 0
+  m_Name: HandleFullCharge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5657156722981258408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603451262097555527}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2540890717935869469}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2070661784173303585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603451262097555527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299bf7cddd5f4d543827299c49a16397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  int1:
+    type: 1
+    component: {fileID: 2604352725001533769}
+    value: 0
+  int2:
+    type: 0
+    component: {fileID: 0}
+    value: 1
+  result: {fileID: 2604352725001533769}
+  output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8132838260546739134}
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8132838260546739134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603451262097555527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce26c2b7c372dd4e8e0aead8178d38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newValue:
+    type: 0
+    component: {fileID: 0}
+    value: 0
+  result: {fileID: 62832963079504355}
   output:
     m_PersistentCalls:
       m_Calls: []
@@ -1221,7 +1388,37 @@ Transform:
   - {fileID: 2206700309777948260}
   - {fileID: 2613020468515247291}
   m_Father: {fileID: 6207789285482576477}
-  m_RootOrder: 4
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7888459326877208729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5865298625304081854}
+  m_Layer: 0
+  m_Name: AddEnemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5865298625304081854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7888459326877208729}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2540890717935869469}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7970306305369973268
 GameObject:
@@ -1252,6 +1449,8 @@ Transform:
   m_Children:
   - {fileID: 2644238149490893341}
   - {fileID: 2003825421355030065}
+  - {fileID: 5657156722981258408}
+  - {fileID: 5865298625304081854}
   m_Father: {fileID: 4026722088793773095}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
